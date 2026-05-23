@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>语音输入法 - 专业词库 + 语音宏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 语音输入法 <span class="badge">专业版</span></h1>
+        <p class="sub">支持医学/法律/编程词库 · 语音宏 · 开始/暂停/结束录音</p>
+
+        <div class="editor-area">
+            <textarea id="textOutput" placeholder="点击“开始录音”，说话即可转文字..."></textarea>
+            <div class="toolbar">
+                <button id="startBtn" class="start-btn">🎙️ 开始录音</button>
+                <button id="pauseBtn" class="pause-btn" disabled>⏸️ 暂停</button>
+                <button id="stopBtn" class="stop-btn" disabled>⏹️ 结束</button>
+                <button id="clearBtn" class="clear-btn">🗑️ 清空</button>
+                <button id="copyBtn" class="copy-btn">📋 复制</button>
+            </div>
+            <div id="statusMsg" class="status">就绪，点击“开始录音”</div>
+        </div>
+
+        <div class="domain-selector">
+            <label>📚 专业领域：</label>
+            <select id="domainSelect">
+                <option value="general">🌐 通用</option>
+                <option value="medical">🏥 医学</option>
+                <option value="legal">⚖️ 法律</option>
+                <option value="programming">💻 编程</option>
+            </select>
+        </div>
+
+        <details class="macro-panel">
+            <summary>📋 语音宏管理（说“宏+名称”即可插入）</summary>
+            <div id="macroManager">
+                <ul id="macroList"></ul>
+                <input type="text" id="macroName" placeholder="宏名称，例如：问候语" />
+                <textarea id="macroContent" rows="2" placeholder="宏内容，例如：您好，我是七牛云实训营的选手"></textarea>
+                <div class="macro-buttons">
+                    <button id="addMacroBtn">➕ 添加/更新</button>
+                    <button id="deleteMacroBtn">❌ 删除</button>
+                </div>
+                <p class="hint">💡 使用示例：录音时说“宏问候语”，即可插入预设文本。</p>
+            </div>
+        </details>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
