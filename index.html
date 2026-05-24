@@ -21,6 +21,7 @@
                 <button id="copyBtn" class="copy-btn">📋 复制</button>
             </div>
             <div id="statusMsg" class="status">就绪，点击“开始录音”</div>
+            <div id="interimResult" class="interim"></div>
         </div>
 
         <div class="domain-selector">
@@ -33,6 +34,22 @@
             </select>
         </div>
 
+        <!-- 自定义词库面板 -->
+        <details class="custom-dict-panel">
+            <summary>📖 自定义词库（缩写 → 术语）</summary>
+            <div id="customDictManager">
+                <ul id="customDictList"></ul>
+                <input type="text" id="dictAbbr" placeholder="缩写，例如：ai" />
+                <input type="text" id="dictFull" placeholder="术语，例如：人工智能" />
+                <div class="dict-buttons">
+                    <button id="addDictBtn">➕ 添加/更新</button>
+                    <button id="deleteDictBtn">❌ 删除</button>
+                </div>
+                <p class="hint">💡 自定义词库优先级最高，会覆盖内置词库。</p>
+            </div>
+        </details>
+
+        <!-- 语音宏管理面板 -->
         <details class="macro-panel">
             <summary>📋 语音宏管理（说“宏+名称”即可插入）</summary>
             <div id="macroManager">
@@ -43,9 +60,16 @@
                     <button id="addMacroBtn">➕ 添加/更新</button>
                     <button id="deleteMacroBtn">❌ 删除</button>
                 </div>
-                <p class="hint">💡 使用示例：录音时说“宏问候语”，即可插入预设文本。</p>
+                <p class="hint">💡 使用示例：录音时说“运行宏问候语”，即可插入预设文本。</p>
             </div>
         </details>
+
+        <!-- 导入/导出按钮 -->
+        <div class="import-export">
+            <button id="exportDataBtn">📤 导出宏和词库 (JSON)</button>
+            <label for="importFileInput" class="import-label">📥 导入 JSON 文件</label>
+            <input type="file" id="importFileInput" accept=".json" style="display:none" />
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
