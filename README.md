@@ -80,4 +80,4 @@ voice-input-method/
 如有问题或建议，欢迎在 GitHub Issues 中提出。
 
 ---
-**实训营作品 – 七牛云暑期实训营**
+
